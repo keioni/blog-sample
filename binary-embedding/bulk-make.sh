@@ -23,9 +23,10 @@ input_files=$(ls $input_dir)
 
 echo "Generating binary embeddings in bulk..."
 for input_file in $input_files; do
-    output_file=$(echo $input_file | perl -pe 's/\./_/g').h
+    variable_name=$(echo $input_file | perl -pe 's/\./_/g')
+    output_file=${variable_name}.h
     echo "Generating $output_file..."
-    ./binary-embedding $input_dir/$input_file $output_dir/$output_file
+    ./binary-embedding $input_dir/$input_file $variable_name > $output_dir/$output_file
 done
 echo "Done."
 echo ""
