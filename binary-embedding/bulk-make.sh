@@ -21,8 +21,22 @@ mkdir -p $output_dir
 
 input_files=$(ls $input_dir)
 
+echo "Generating binary embeddings in bulk..."
 for input_file in $input_files; do
     output_file=$(echo $input_file | perl -pe 's/\./_/g').h
     echo "Generating $output_file..."
     ./binary-embedding $input_dir/$input_file $output_dir/$output_file
 done
+echo "Done."
+echo ""
+
+# write all output files' #include <output_file.h> statements to a
+# single file named after the output directory. This file can be
+# included in your C/C++ source code.
+
+echo "Writing #include statements..."
+for input_file in $input_files; do
+    output_file=$(echo $input_file | perl -pe 's/\./_/g').h
+    echo "#include \"$output_file\""
+done > $output_dir/$(basename $output_dir).h
+echo "Done."
