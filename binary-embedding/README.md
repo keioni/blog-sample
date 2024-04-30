@@ -32,7 +32,8 @@ const unsigned char hoge_array[] = {
   0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x57, 0x6f, 0x72,
   0x6c, 0x64, 0x21
 };
-const unsigned long hoge_size = 13;
+
+const size_t hoge_size = 13;
 ```
 
 あとは、メインのC/C++のコードでこのファイルを `include` して使ってください。
