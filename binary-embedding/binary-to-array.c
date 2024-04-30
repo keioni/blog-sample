@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         }
     }
     printf("\n};\n");
-    printf("const unsigned long %s_size = %lu;\n\n", array_name, array_size);
+    printf("const size_t %s_size = %lu;\n\n", array_name, array_size);
 
     if (binary_file_name)
     {
