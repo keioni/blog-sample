@@ -10,7 +10,7 @@
 # How to use
 
 ```
-binary-embedding [-i input.bin]　var_name
+binary-to-array [-i input.bin]　var_name
 ```
 
 `-i input.bin` は入力するバイナリファイルを指定します。省略すると標準入力から読み込みます。
@@ -22,18 +22,18 @@ binary-embedding [-i input.bin]　var_name
 # Example
 
 ```
-$ echo -n "Hello, World!" | ./binary-embedding hoge > hoge_data.h
+$ echo -n "Hello, World" | ./binary-to-array hello > hello.h
 ```
 
-上のコマンドで、`hoge_data.h` に以下のようなコードが出力されます。
+上のコマンドで、`hello.h` に以下のようなコードが出力されます。
 
 ```C
-const unsigned char hoge_array[] = {
-  0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x57, 0x6f, 0x72,
-  0x6c, 0x64, 0x21
+const unsigned char hello_array[] = {
+	0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x57, 0x6f, 0x72,
+	0x6c, 0x64,
 };
 
-const size_t hoge_size = 13;
+const unsigned long hello_size = 12;
 ```
 
 あとは、メインのC/C++のコードでこのファイルを `include` して使ってください。
