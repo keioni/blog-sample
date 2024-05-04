@@ -5,7 +5,7 @@
 
 目的や作った理由、使い方などは以下の記事に書いています。
 
-[C/C++の実行コードにバイナリを埋め込む - Zenn](https://zenn.dev/articles/19290c7bee35f6)
+[C/C++の実行コードにバイナリを埋め込む - Zenn](https://zenn.dev/keioni/articles/8b06158f5d541c)
 
 # How to use
 
