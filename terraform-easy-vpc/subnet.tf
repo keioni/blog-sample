@@ -28,7 +28,7 @@ resource "aws_subnet" "main" {
   availability_zone = data.aws_availability_zones.available.names[count.index]
 
   assign_ipv6_address_on_creation = true
-  map_public_ip_on_launch         = false
+  map_public_ip_on_launch         = true
 
 
   tags = {
