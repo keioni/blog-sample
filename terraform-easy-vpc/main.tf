@@ -30,9 +30,34 @@ resource "aws_subnet" "main" {
   assign_ipv6_address_on_creation = true
   map_public_ip_on_launch         = true
 
-
   tags = {
     Name = "subnet-${var.app}-${var.env}-${replace(data.aws_availability_zones.available.names[count.index], "/^.+?([a-z])$/", "$1")}"
+  }
+}
+
+resource "aws_internet_gateway" "main" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "igw-${var.app}-${var.env}"
+  }
+}
+
+resource "aws_default_route_table" "main" {
+  default_route_table_id = aws_vpc.main.default_route_table_id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.main.id
+  }
+
+  route {
+    ipv6_cidr_block = "::/0"
+    gateway_id      = aws_internet_gateway.main.id
+  }
+
+  tags = {
+    Name = "rtb-${var.app}-${var.env}"
   }
 }
 
