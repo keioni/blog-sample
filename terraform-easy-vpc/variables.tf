@@ -1,5 +1,5 @@
-variable "env" {}
-variable "app" {}
-variable "aws_region" {}
-variable "vpc_cidr_block" {}
-variable "subnet_mask_length" {}
+variable "app" {}  # アプリケーション名(例: "nekosearch")
+variable "env" {}  # 環境名(例: "dev")
+variable "aws_region" {}  # AWSリージョン(例: "ap-northeast-1")
+variable "vpc_cidr_block" {}  # VPCのCIDRブロック(例: "10.0.0.0/16")
+variable "subnet_mask_length" {}  # サブネットのマスク長(例: 24)
