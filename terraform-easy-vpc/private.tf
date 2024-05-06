@@ -33,8 +33,6 @@ resource "aws_nat_gateway" "private" {
 }
 
 resource "aws_eip" "nat_gw" {
-  domain = "vpc"
-
   tags = {
     Name = "eip-nat-gw-${var.app}-${var.env}"
   }
