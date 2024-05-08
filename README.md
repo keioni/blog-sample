@@ -1,6 +1,6 @@
 # zenn-sample
 
-[Zenn](https://zenn.dev) に書いた記事のサンプルコードをまとめています。
+[Zenn](https://zenn.dev/keioni) に書いた記事のサンプルコードをまとめています。
 
 すべて MIT ライセンスでの提供です。自由に使ってください。
 
