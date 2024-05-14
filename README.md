@@ -1,6 +1,6 @@
-# zenn-sample
+# blog-sample
 
-[Zenn](https://zenn.dev/keioni) に書いた記事のサンプルコードをまとめています。<br>
+[Zenn](https://zenn.dev/keioni) など、技術ブログに書いた記事のサンプルコードをまとめています。<br>
 昔 Qiita に書いていた記事のサンプルコードは https://github.com/keioni/qiita-sample を参照してください。
 
 すべて MIT ライセンスでの提供です。自由に使ってください。
